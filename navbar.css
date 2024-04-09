@@ -20,6 +20,7 @@ body {
   --hamburger-margin: 8px;
   --animation-timing: 200ms ease-in-out;
   --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+  --fontbold:"Poppins", sans-serif;
 }
 
 
@@ -111,7 +112,7 @@ body {
       a{
           text-decoration: none ;
           color: var(--txt-color);
-          font-family: Arial, Helvetica, sans-serif;
+          font-family: var(--fontbold);
           font-size: 23px;
           padding: 20px;
           Margin: 20px 10px;
@@ -126,7 +127,7 @@ body {
           position: absolute;
           bottom: 0;
           color: var(--txt-color); 
-          font-family: Arial, Helvetica, sans-serif; 
+          font-family: var(--fontbold); 
           font-size: 23px; 
           padding: 10px;
           margin: 10px;
@@ -142,63 +143,35 @@ body {
 }
 /*desktop*/
 @media only screen and (min-width: 901px) {
-    body{
-        background-color: #333;
-    }
+  .hamburger-menu {
+    display: none;
+  }
 
-    .navbar {
-        background-color: var(--foreground);
-        padding: 15px 30px; /* Indvendig polstring */
-        display: flex; /* Flexbox layout */
-        justify-content: space-between; /* Placerer elementer jævnt langs hovedaksen */
-        align-items: center; /* Centrerer elementer langs tværgående akse*/
-    }
+  .sidebar {
+    translate: 0;
+    transition: none;
+    padding: 18px;
+    max-width: none;
+    min-height: auto;
+    background-color: var(--foreground);
+    
+  }
 
-    .navbar .nav-links {
-        list-style-type: none; /* Fjerner punktopstilling fra liste */
-        margin: 0; /* Fjerner standardmarginen */
-        padding: 0; /* Fjerner standardpolstringen */
-    }
+  .sidebar nav {
+    display: flex;
+    justify-content: space-evenly;
+  }
 
-    .navbar .nav-links li {
-        display: inline-flex; /* Elementer vises i en række */
-        margin-right: 20px; /* Afstand mellem hver link */
-    }
-
-    .navbar .nav-links li:last-child {
-        margin-right: 0; /* Fjerner højremargenen fra det sidste element */
-    }
-
-    .navbar .nav-links a {
-        text-decoration: none; /* Fjerner understregning fra links */
-        color: white; /* Tekstfarve */
-        font-size: 16px; /* Tekststørrelse */
-        font-weight: bold; /* Fet skrift */
-        /* Tilføj disse regler til at sikre, at dine links fylder pladsen korrekt */
-        padding: 0 10px;
-        display: inline-block;
-    }
-
-    .navbar .logud {
-        color: white; /* Tekstfarve for "Log ud" -link */
-        text-decoration: none; /* Fjerner understregning fra link */
-        font-size: 16px; /* Tekststørrelse */
-        font-weight: bold; /* Fet skrift */
-        margin-left: auto; /* Flyt "Log ud" helt til højre */
-    }
-
-    a {
-        text-decoration: none;
-        color: var(--txt-color);
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 23px;
-        padding: 20px;
-        margin: 20px 10px;
-    }
-
-    a:hover {
-        background-color: var(--hover-navbar);
-        padding: 5px;
-        margin: 5px;
-    }
+  .sidebar a,
+  .sidebar a {
+    text-decoration: none;
+    position: inherit;
+    margin: 0;
+    padding: 18px;
+    color: var(--txt-color);
+    font-family: var(--fontbold);
+  }
+  a:hover{
+    background-color: var(--hover-navbar);
+  }
 }
